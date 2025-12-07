@@ -7,3 +7,16 @@
 
 soong_namespace {
 }
+
+// Boot control HAL for Infinix_X6716 recovery
+cc_library_shared {
+    name: "android.hardware.boot@1.0-impl.recovery",
+    defaults: ["bootctrl_hal_defaults"],
+    recovery: true,
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+    vendor: true,
+    // При необходимости — добавить srcs: [...]
+}
